@@ -27,6 +27,7 @@ isSuccess(400);
 
 * [is-redirect](https://github.com/sindresorhus/is-redirect)
 * [is-server-error](https://github.com/arthurvr/is-server-error)
+* [is-client-error](https://github.com/arthurvr/is-client-error)
 
 ## License
 

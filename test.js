@@ -1,21 +1,25 @@
 'use strict';
-var assert = require('assert');
+var test = require('ava');
 var isSuccess = require('./');
 
 [200, 201, 202, 203, 204, 205, 206, 207, 208, 226].forEach(function (code) {
-	it('should detect `' + code + '`', function () {
-		assert.strictEqual(isSuccess(code), true);
+	test('should detect `' + code + '`', function (t) {
+		t.true(isSuccess(code));
+		t.end();
 	});
 });
 
-it('should return `false` for other codes', function () {
-	assert.strictEqual(isSuccess(404), false);
+test('should return `false` for other codes', function (t) {
+	t.false(isSuccess(404));
+	t.end();
 });
 
-it('should throw when passing nonsense', function () {
+test('should throw when passing nonsense', function (t) {
 	[undefined, function () {}, {}].forEach(function (input) {
-		assert.throws(function () {
+		t.throws(function () {
 			isSuccess(input);
 		});
 	});
+
+	t.end();
 });

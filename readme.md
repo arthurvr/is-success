@@ -13,7 +13,7 @@ $ npm install --save is-success
 ## Usage
 
 ```js
-var isSuccess = require('is-success');
+const isSuccess = require('is-success');
 
 isSuccess(200);
 //=> true
